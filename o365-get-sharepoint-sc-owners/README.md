@@ -1,0 +1,1 @@
+Gets a list of all sharepoint site collection owners and exports them to a file

@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+<title>Communications Manager</title>
+
+<head>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+<style>
+body {
+	color: #656565;
+	margin: 0;
+	padding: 0;
+	background-color: #F3F3F1;
+	font: 14px/1.5em 'Open Sans', Arial, Helvetica, Geneva, sans-serif;
+	background-image: url(/unauthenticated/login-bg.png);
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #656565;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #999;
+}
+
+h2 {
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E9E9DF;
+  color: #000;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+form {
+	margin: 0px;
+}
+
+table.wrapper {
+}
+
+input {
+	font-size: 14px;  
+	color: #999;
+	border: none;
+	margin-left: 5px;
+}
+
+input.text {
+	width: 250px;  
+  border: 1px solid #E9E9DF;
+  background-color: #F6F5E7;
+  margin-left: 10px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+	padding: 7px;
+}
+
+input.checkbox {
+  margin-left: 10px;
+}
+
+input.button {
+	background-color: #0087DF;
+	cursor: pointer; 
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 2px;
+	margin-left: 10px;
+	-webkit-appearance: none;
+}
+
+tr.input td {
+  padding-bottom: 15px;
+}
+
+.logintop {
+	height: 100px;
+}
+
+.loginbox {
+	padding-bottom: 15px;
+	background-color: #fff;
+	border: 1px solid #E9E9DF;
+	padding: 20px;
+}
+
+.warning {
+	font-weight: normal;
+	padding-top: 20px;
+	font-size: 0.9em;
+}
+
+td.logo {
+  padding-bottom: 20px;
+}
+
+</style>
+
+
+</head>
+<body onLoad='document.forms[0].pass.value = ""; document.forms[0].user.focus()'>
+<table width="100%" border="0" class="wrapper">
+  <tr>
+    <td align="center" valign="top"><table width="300" border="0">
+     <tr>
+        <td align="center" valign="bottom" class="warning"></td>
+      </tr>   
+      <tr>
+        <td align="center" valign="top" class="logintop">&nbsp;</td>
+      </tr>
+  
+<tr><td align="center" class="logo" valign="top"><img src="/unauthenticated/pbxm-logo.png" alt=""></td></tr>
+<tr>
+        <td align="center" valign="top" class="loginbox">
+		
+		<form action=/session_login.cgi method=post autocomplete="off">
+<input type=hidden name=page value='/'>
+<table>
+<tbody>
+  <tr>
+    <td colspan=2 align="center"><h2>Communications Manager</h2></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <table>
+        <tbody>
+          <tr class="input">
+            <td>Username</td>
+            <td><input name="user" size="20" value="" class="text" autocomplete="on"></td>
+          </tr>
+          <tr class="input">
+            <td>Password</td>
+            <td><input name="pass" size="20" type="password" class="text" autocomplete="off"></td>
+          </tr>
+          <tr class="input">
+            <td></td>
+            <td><input type="checkbox" name="save" value="1" class="checkbox"> Remember login permanently?</td>
+          </tr>
+          
+          <tr>
+            <td></td>
+        <td><input type="submit" class="button" value="Secure Login &rarr;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</tbody>
+</table>
+</form>
+		</td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+</tbody></table>
+<script>
+if (window != window.top) {
+	window.top.location = window.location;
+	}
+</script>
+</body></html>
