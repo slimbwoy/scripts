@@ -1,0 +1,61 @@
+Get-Process 'Outlook' | Stop-Process -Force
+Start-Sleep -s 10
+
+
+#Environment Check, if Done file exist, quit script, if file does not exist run script.
+if(Test-Path "$Env:appdata\Microsoft\Outlook\done.txt")
+{
+Else Exit
+}
+
+
+##Checks to See 2010 is installed and will run for 2010##
+if(Test-Path HKCU:\Software\Microsoft\Office\14.0\Outlook)
+{
+New-ItemProperty -Path HKCU:\Software\Microsoft\Office\14.0\Outlook\AutoDiscover -Name ZeroConfigExchange -Value 1 -PropertyType DWORD -Force
+
+Remove-Item "HKCU:\Software\Microsoft\Office\14.0\Outlook\Profiles*" -Recurse -Force
+
+Remove-ItemProperty -Path HKCU:\Software\Microsoft\Office\14.0\Outlook\Setup\ -name First-Run
+
+cd 'C:\Program Files (x86)\Microsoft Office\Office14'
+
+.\outlook.exe
+#Now will create a done file
+New-Item -path "$Env:appdata\Microsoft\Outlook" -Name done.txt -Value 'Outlook 2010 data cleared for user' -ItemType file -force
+
+}
+
+##Checks to See 2013 is installed and will run for 2013#
+if(Test-Path HKCU:\Software\Microsoft\Office\15.0\Outlook)
+{
+New-ItemProperty -Path HKCU:\Software\Microsoft\Office\15.0\Outlook\AutoDiscover -Name ZeroConfigExchange -Value 1 -PropertyType DWORD -Force
+
+Remove-Item "HKCU:\Software\Microsoft\Office\15.0\Outlook\Profiles*" -Recurse -Force
+
+Remove-ItemProperty -Path HKCU:\Software\Microsoft\Office\15.0\Outlook\Setup\ -name First-Run
+
+cd 'C:\Program Files (x86)\Microsoft Office\Office15'
+
+.\outlook.exe
+#Now will create a done file
+New-Item -path "$Env:appdata\Microsoft\Outlook" -Name done.txt -Value 'Outlook 2013 data cleared for user' -ItemType file -force
+
+}
+
+##Checks to See 2016 is installed and will run for 2016##
+if(Test-Path HKCU:\Software\Microsoft\Office\16.0\Outlook)
+{
+New-ItemProperty -Path HKCU:\Software\Microsoft\Office\16.0\Outlook\AutoDiscover -Name ZeroConfigExchange -Value 1 -PropertyType DWORD -Force
+
+Remove-Item "HKCU:\Software\Microsoft\Office\16.0\Outlook\Profiles*" -Recurse -Force
+
+Remove-ItemProperty -Path HKCU:\Software\Microsoft\Office\16.0\Outlook\Setup\ -name First-Run
+
+cd 'C:\Program Files (x86)\Microsoft Office\root\Office16'
+
+.\outlook.exe
+#Now will create a done file
+New-Item -path "$Env:appdata\Microsoft\Outlook" -Name done.txt -Value 'Outlook 2016 data cleared for user' -ItemType file -force
+
+}
